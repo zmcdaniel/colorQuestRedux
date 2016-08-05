@@ -39,13 +39,6 @@ ColorQuest.Game.prototype = {
     this.player.body.gravity.y = 1000;
     //this.player.body.gravity.x = 500;
 
-    //properties when the player is ducked and standing, so we can use in update()
-    var playerDuckImg = this.game.cache.getImage('playerDuck');
-
-    this.player.duckedDimensions = {width: playerDuckImg.width, height: playerDuckImg.height};
-    this.player.standDimensions = {width: this.player.width, height: this.player.height};
-    this.player.anchor.setTo(0.5, 1);
-    
     //the camera will follow the player in the world
     this.game.camera.follow(this.player);
 
