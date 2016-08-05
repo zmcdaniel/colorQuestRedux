@@ -1,6 +1,6 @@
 var ColorQuest = ColorQuest || {};
 
-ColorQuest.game = new Phaser.Game(746, 126, Phaser.AUTO, '');
+ColorQuest.game = new Phaser.Game(746, 487, Phaser.AUTO, '');
 
 ColorQuest.game.state.add('Boot', ColorQuest.Boot);
 ColorQuest.game.state.add('Preload', ColorQuest.Preload);

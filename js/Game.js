@@ -17,7 +17,7 @@ ColorQuest.Game.prototype = {
     this.blockedLayer = this.map.createLayer('blockedLayer');
 
     //collision on blockedLayer
-    this.map.setCollisionBetween(1, 5000, true, 'blockedLayer');
+    this.map.setCollisionBetween(1, 20000, true, 'blockedLayer');
 
     //resizes the game world to match the layer dimensions
     this.backgroundlayer.resizeWorld();
@@ -52,31 +52,45 @@ ColorQuest.Game.prototype = {
     this.game.physics.arcade.collide(this.player, this.blockedLayer, this.playerHit, null, this);
 
       if(this.cursors.up.isDown) {
-        console.log('jumping');
         this.playerJump();
       } else if (this.cursors.left.isDown) {
-        console.log('left cursor down');
         this.playerLeft();
       } else if (this.cursors.right.isDown) {
-        console.log('right cursor down');
         this.playerRight();
       }
+      // else if (this.cursors.down.isDown) {
+      //   this.playerDuck();
+      // }
   },
 
   playerJump: function() {
     if(this.player.body.blocked.down) {
       this.player.body.velocity.y -= 300;
+      console.log('jumping');
     }    
   },
 
   playerRight: function() {
       this.player.body.x += 5;
       this.player.scale.setTo(1, 1);
+      console.log('right');
   },
 
   playerLeft: function() {
       this.player.body.x -= 5;
       this.player.scale.setTo(-1, 1);
+      console.log('left');
   },
 
+  // playerDuck: function() {
+  //   this.player.loadTexture('playerDuck');
+  //   this.player.body.setSize(this.player.duckedDimensions.width, this.player.duckedDimensions.height);
+  //   this.player.isDucked = true;
+  //   console.log('ducking');
+  // },
+  // render: function()
+  //   {
+  //       this.game.debug.text(this.game.time.fps || '--', 20, 70, "#00ff00", "40px Courier");   
+  //       this.game.debug.bodyInfo(this.player, 0, 80);   
+  //   }
 };
