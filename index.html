@@ -15,12 +15,17 @@
 		<script type="text/javascript" src="js/GameOver.js"></script>
 		<script type="text/javascript" src="js/timer.js"></script>
 
+		<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+
 		<style>
 		  body {
 		    padding: 0px;
 		    margin: 0px;
-		    background-color: green;
+		    background-color: black;
 		    text-align: center;
+		    font-family: 'Press Start 2P', 'Courier', monospace;
+		   	color: #00FF00;
 		  }
 
 		  #gamespace {
@@ -33,10 +38,27 @@
 	<body>  
 
 		<h2>gemJam</h2>
-		<div id='score'>Score: <span id='score_num'>0</span></div>
+		* * * * * * * * * * * * <br><br>
 
-		<label id="minutes">00</label>:<label id="seconds">00</label>
+		<div class='container'>
+		<div class='row'>
+			<div class='col-md-6'>
+				<div id='score'>
+					SCORE: <span id='score_num'>0</span>/11
+				</div>
+				<div id='highScore'>
+					HI SCORE: <span id='highScoreNum'>0/11</span>
+				</div>
+			</div>
 
+			<div class ='col-md-6'>
+				<div id='timer'>
+				<div id='timeLabel'>TIME:</div>
+				<label id="minutes">00</label>:<label id="seconds">00</label>
+				</div>
+			</div>
+		</div>
+		</div>
 		<div id ='gameSpace'>
 		<script src="js/main.js"></script>
 		</div>
