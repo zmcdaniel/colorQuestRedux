@@ -14,10 +14,12 @@ ColorQuest.Boot.prototype = {
 
     //scaling options
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    this.scale.maxWidth = 800;
+    this.scale.maxHeight = 600;
     
     //have the game centered horizontally
     this.scale.pageAlignHorizontally = true;
-    this.scale.pageAlignVertically = true;
+    //this.scale.pageAlignVertically = true;
 
     //screen size will be set automatically
     this.scale.setScreenSize(true);
