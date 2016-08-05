@@ -80,10 +80,17 @@ ColorQuest.Game.prototype = {
       }
 
       if(this.player.y >= this.world.height) {
-        this.player.loadTexture('playerDead');
+       this.player.loadTexture('playerDead');
         this.game.time.events.add(1500, this.gameOver, this);
-        winOrLoseHandler.text('You died!');
+
+        winOrLoseHandler.text("You died!");
+        setTimeout(function() {
+        winOrLoseHandler.fadeOut(1000, function () { 
+        });
+        }, 5000);
+
         prevScoreHandler.text(score);
+        prevTimeHander.text()
         stopTime();
         clearTime();
         this.game.state.start('Game');
