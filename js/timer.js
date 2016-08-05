@@ -13,7 +13,7 @@ $(document).ready(function() {
     };
 
     window.clearTime = function () {
-        timer = setTime();
+        timer = '00:00';
     };
 
     function setTime() {

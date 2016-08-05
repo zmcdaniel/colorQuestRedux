@@ -59,6 +59,7 @@ ColorQuest.Game.prototype = {
 
 
 
+
   },
   
   update: function() {
@@ -149,6 +150,13 @@ ColorQuest.Game.prototype = {
     console.log('score: ', score);
     //this.scoreText.text = 'Score: ' + score;
     collectable.kill();
-  }
+  },
 
+  win: function() {
+    ColorQuest.game.state.start('Victory');
+  },
+
+  die: function() {
+    ColorQuest.game.state.start('GameOver');
+  }
 };
