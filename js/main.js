@@ -4,7 +4,7 @@ var score = 0;
 var scoreHandler = $('#score_num');
 
 
-ColorQuest.game = new Phaser.Game(746, 487, Phaser.AUTO, '');
+ColorQuest.game = new Phaser.Game(746, 487, Phaser.CANVAS, '');
 
 ColorQuest.game.state.add('Boot', ColorQuest.Boot);
 ColorQuest.game.state.add('Preload', ColorQuest.Preload);
