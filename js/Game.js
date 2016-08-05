@@ -15,6 +15,7 @@ ColorQuest.Game.prototype = {
 
     //create layers
     this.backgroundlayer = this.map.createLayer('backgroundLayer');
+    this.backgroundFlora = this.map.createLayer('backgroundFlora');
     this.blockedLayer = this.map.createLayer('blockedLayer');
 
     //collision on blockedLayer
@@ -34,6 +35,7 @@ ColorQuest.Game.prototype = {
 
     //properties when the player is ducked and standing, so we can use in update()
     var playerDuckImg = this.game.cache.getImage('playerDuck');
+
     this.player.duckedDimensions = {width: playerDuckImg.width, height: playerDuckImg.height};
     this.player.standDimensions = {width: this.player.width, height: this.player.height};
     this.player.anchor.setTo(0.5, 1);
@@ -59,17 +61,21 @@ ColorQuest.Game.prototype = {
       } else if (this.cursors.right.isDown) {
         this.playerRight();
       }
-      // else if (this.cursors.down.isDown) {
-      //   this.playerDuck();
-      // }
+
+      if(this.player.y >= this.world.height) {
+        this.player.loadTexture('playerDead');
+        console.log('Dead! Game over');
+        this.game.state.start('Game');
+      }
   },
 
   playerJump: function() {
     if(this.player.body.blocked.down) {
-      this.player.body.velocity.y -= 300;
+      this.player.body.velocity.y -= 500;
       console.log('jumping');
     }    
   },
+
 
   playerRight: function() {
       this.player.body.velocity.x += 5;
