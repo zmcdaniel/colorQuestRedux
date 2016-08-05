@@ -1,7 +1,7 @@
 # gemJam
 
 ## About
-A browser based game built using the Phaser.io framework and HTML5. Exploring a 2D platformer world, the player must locate gems without initiating a Game Over. The game features a timer as well as a score to compare previous attempts. I used the application Tiled http://www.mapeditor.org/ to help me in generation a large 2D side scrolling world using an open source, small-sized spritesheet to allow for quick loading times. 
+A browser based game built using the Phaser.io framework and HTML5. Exploring a 2D platformer world, the player must locate gems without initiating a Game Over. The game features a timer as well as a score to compare previous attempts. I used the application Tiled to help me in generation a large 2D side scrolling world using an open source, small-sized spritesheet to allow for quick loading times. 
 
 ## Assets used
 
