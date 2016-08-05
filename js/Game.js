@@ -34,6 +34,7 @@ ColorQuest.Game.prototype = {
 
     //player gravity
     this.player.body.gravity.y = 1000;
+    this.player.body.gravity.x = 500;
 
     //properties when the player is ducked and standing, so we can use in update()
     var playerDuckImg = this.game.cache.getImage('playerDuck');

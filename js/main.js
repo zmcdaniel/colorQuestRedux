@@ -2,6 +2,7 @@ var ColorQuest = ColorQuest || {};
 
 var score = 0;
 var scoreHandler = $('#score_num');
+var HUD;
 
 
 ColorQuest.game = new Phaser.Game(300, 200, Phaser.CANVAS, '');
