@@ -53,6 +53,8 @@ ColorQuest.Game.prototype = {
 
     //sounds
     this.gemSound = this.game.add.audio('coin');
+    this.jumpSound = this.game.add.audio('jump');
+    //this.deadSound = this.game.add.audio('dead');
 
 
 
@@ -83,18 +85,19 @@ ColorQuest.Game.prototype = {
     if(this.player.body.blocked.down) {
       this.player.body.velocity.y -= 500;
       console.log('jumping');
+      this.jumpSound.play();
     }    
   },
 
 
   playerRight: function() {
-      this.player.body.velocity.x += 5;
+      this.player.body.velocity.x = 150;
       this.player.scale.setTo(1, 1);
       console.log('right');
   },
 
   playerLeft: function() {
-      this.player.body.velocity.x -= 5;
+      this.player.body.velocity.x = -150;
       this.player.scale.setTo(-1, 1);
       console.log('left');
   },
