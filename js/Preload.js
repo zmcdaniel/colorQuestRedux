@@ -15,6 +15,7 @@ ColorQuest.Preload.prototype = {
     //load game assets
     this.load.tilemap('level1', 'assets/tilemaps/level2.json', null, Phaser.Tilemap.TILED_JSON);
     this.load.image('gameTiles', 'assets/images/tiles_spritesheet.png');
+    this.load.image('backgroundTiles', 'assets/images/backgrounds.png');
     this.load.image('player', 'assets/images/player.png');
     this.load.image('playerDuck', 'assets/images/player_duck.png');
     this.load.image('playerDead', 'assets/images/player_dead.png');

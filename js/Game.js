@@ -11,6 +11,7 @@ ColorQuest.Game.prototype = {
 
     //the first parameter is the tileset name as specified in Tiled, the second is the key to the asset
     this.map.addTilesetImage('tiles_spritesheet', 'gameTiles');
+    this.map.addTilesetImage('background_spritesheet', 'backgroundTiles');
 
     //create layers
     this.backgroundlayer = this.map.createLayer('backgroundLayer');
@@ -71,13 +72,13 @@ ColorQuest.Game.prototype = {
   },
 
   playerRight: function() {
-      this.player.body.x += 5;
+      this.player.body.velocity.x += 5;
       this.player.scale.setTo(1, 1);
       console.log('right');
   },
 
   playerLeft: function() {
-      this.player.body.x -= 5;
+      this.player.body.velocity.x -= 5;
       this.player.scale.setTo(-1, 1);
       console.log('left');
   },
