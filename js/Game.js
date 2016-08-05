@@ -34,7 +34,7 @@ ColorQuest.Game.prototype = {
 
     //player gravity
     this.player.body.gravity.y = 1000;
-    this.player.body.gravity.x = 500;
+    //this.player.body.gravity.x = 500;
 
     //properties when the player is ducked and standing, so we can use in update()
     var playerDuckImg = this.game.cache.getImage('playerDuck');
@@ -78,6 +78,8 @@ ColorQuest.Game.prototype = {
       if(this.player.y >= this.world.height) {
         this.player.loadTexture('playerDead');
         console.log('Dead! Game over');
+        stopTime();
+        clearTime();
         this.game.state.start('Game');
       }
   },
