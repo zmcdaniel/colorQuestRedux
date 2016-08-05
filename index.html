@@ -8,6 +8,7 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<script type="text/javascript" src="js/phaser.2.1.2.min.js"></script>
+		<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/Boot.js"></script>
 		<script type="text/javascript" src="js/Preload.js"></script>
 		<script type="text/javascript" src="js/Game.js"></script>
@@ -16,12 +17,18 @@
 		  body {
 		    padding: 0px;
 		    margin: 0px;
-		    background-color: 'green';
+		    background-color: green;
+		    text-align: center;
 		  }
 		  </style>
 	</head>
 
 	<body>  
+
+		<h2>gemJam</h2>
+		<div id='score'>Score: <span id='score_num'>0</span></div>
 		<script src="js/main.js"></script>
 	</body>
+
+
 </html>

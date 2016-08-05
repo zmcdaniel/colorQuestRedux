@@ -6,6 +6,7 @@ ColorQuest.Game.prototype = {
   preload: function() {
       this.game.time.advancedTiming = true;
     },
+
   create: function() {
 
     this.map = this.game.add.tilemap('level1');
@@ -51,9 +52,10 @@ ColorQuest.Game.prototype = {
     this.createGems();
 
     //sounds
-    this.coinSound = this.game.add.audio('coin');
+    this.gemSound = this.game.add.audio('coin');
 
-    var gemCount = 0;
+
+
   },
   
   update: function() {
@@ -134,15 +136,13 @@ ColorQuest.Game.prototype = {
   },
 
   collect: function(player, collectable) {
-    // gemCount++;
-    // console.log('score: ', gemCount);
-    collectable.destroy();
+    this.gemSound.play();
+    score++;
+    console.log(scoreHandler);
+    scoreHandler.text(score);
+    console.log('score: ', score);
+    //this.scoreText.text = 'Score: ' + score;
+    collectable.kill();
   }
 
-
-  // render: function()
-  //   {
-  //       this.game.debug.text(this.game.time.fps || '--', 20, 70, "#00ff00", "40px Courier");   
-  //       this.game.debug.bodyInfo(this.player, 0, 80);   
-  //   }
 };
