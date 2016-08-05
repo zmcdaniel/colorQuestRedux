@@ -13,7 +13,8 @@ $(document).ready(function() {
     };
 
     window.clearTime = function () {
-        timer = '00:00';
+        console.log('clearing time');
+        totalSeconds = 0;
     };
 
     function setTime() {

@@ -2,6 +2,8 @@ var ColorQuest = ColorQuest || {};
 
 var score = 0;
 var scoreHandler = $('#score_num');
+var winOrLoseHandler = $('#winOrLose');
+var prevScoreHandler = $('#prevScoreNum');
 var time = '00:00';
 
 

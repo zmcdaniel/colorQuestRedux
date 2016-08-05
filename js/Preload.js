@@ -25,6 +25,5 @@ ColorQuest.Preload.prototype = {
   },
   create: function() {
     this.state.start('Game');
-    startTime();
   }
 };

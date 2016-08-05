@@ -9,6 +9,9 @@ ColorQuest.Game.prototype = {
 
   create: function() {
 
+    score = 0;
+    startTime();
+
     this.map = this.game.add.tilemap('level1');
 
     //the first parameter is the tileset name as specified in Tiled, the second is the key to the asset
@@ -27,7 +30,7 @@ ColorQuest.Game.prototype = {
     this.backgroundlayer.resizeWorld();
 
     //create player
-    this.player = this.game.add.sprite(20, 20, 'player');
+    this.player = this.game.add.sprite(1890, 200, 'player');
 
     //enable physics on the player
     this.game.physics.arcade.enable(this.player);
@@ -78,7 +81,9 @@ ColorQuest.Game.prototype = {
 
       if(this.player.y >= this.world.height) {
         this.player.loadTexture('playerDead');
-        console.log('Dead! Game over');
+        this.game.time.events.add(1500, this.gameOver, this);
+        winOrLoseHandler.text('You died!');
+        prevScoreHandler.text(score);
         stopTime();
         clearTime();
         this.game.state.start('Game');
@@ -145,11 +150,13 @@ ColorQuest.Game.prototype = {
   collect: function(player, collectable) {
     this.gemSound.play();
     score++;
-    console.log(scoreHandler);
     scoreHandler.text(score);
     console.log('score: ', score);
-    //this.scoreText.text = 'Score: ' + score;
     collectable.kill();
+    if (score === 11) {
+      winOrLoseHandler.text('You won!');
+      prevScoreHandler.text('11');
+    }
   },
 
   win: function() {
