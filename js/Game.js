@@ -39,13 +39,6 @@ ColorQuest.Game.prototype = {
     this.player.body.gravity.y = 1000;
     //this.player.body.gravity.x = 500;
 
-    //properties when the player is ducked and standing, so we can use in update()
-    var playerDuckImg = this.game.cache.getImage('playerDuck');
-
-    this.player.duckedDimensions = {width: playerDuckImg.width, height: playerDuckImg.height};
-    this.player.standDimensions = {width: this.player.width, height: this.player.height};
-    this.player.anchor.setTo(0.5, 1);
-    
     //the camera will follow the player in the world
     this.game.camera.follow(this.player);
 
@@ -80,7 +73,7 @@ ColorQuest.Game.prototype = {
       }
 
       if(this.player.y >= this.world.height) {
-       this.player.loadTexture('playerDead');
+        this.player.loadTexture('playerDead');
         this.game.time.events.add(1500, this.gameOver, this);
 
         winOrLoseHandler.text("You died!");
@@ -162,15 +155,12 @@ ColorQuest.Game.prototype = {
     collectable.kill();
     if (score === 11) {
       winOrLoseHandler.text('You won!');
+
+      setTimeout(function() {
+      winOrLoseHandler.fadeOut(1000, function () {});}, 5000);
+
       prevScoreHandler.text('11');
     }
   },
 
-  win: function() {
-    ColorQuest.game.state.start('Victory');
-  },
-
-  die: function() {
-    ColorQuest.game.state.start('GameOver');
-  }
 };
