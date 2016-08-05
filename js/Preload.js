@@ -19,7 +19,7 @@ ColorQuest.Preload.prototype = {
     this.load.image('player', 'assets/images/player.png');
     this.load.image('playerDuck', 'assets/images/player_duck.png');
     this.load.image('playerDead', 'assets/images/player_dead.png');
-    this.load.image('goldCoin', 'assets/images/gem.png');
+    this.load.image('greenGem', 'assets/images/gem.png');
     this.load.audio('coin', ['assets/audio/coin.ogg', 'assets/audio/coin.mp3']);
   },
   create: function() {
